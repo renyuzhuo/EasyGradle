@@ -1,16 +1,20 @@
 <idea-plugin>
     <id>cn.renyuzhuo.plugin.easygradle</id>
     <name>Easy Gradle</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <vendor email="renyuzhuo@foxmail.com" url="http://renyuzhuo.cn">RenYuZhuo</vendor>
 
     <description><![CDATA[
       Easy Gradle.<br>
-      Use gradle is so easy! You can format build.gradle file, update gradle to new version, stop gradle with one click.
+      Use gradle is so easy!
+
+      1. You can format build.gradle file
+      2. update gradle to new version
+      3. stop gradle with one click
     ]]></description>
 
     <change-notes><![CDATA[
-      V1.0.0<br>
+      V1.0.1<br>
       Release The First Version: EasyGradle<br>
       Have Fun!
     ]]>
@@ -30,15 +34,21 @@
     </extensions>
 
     <actions>
-        <action id="EasyGradle.KillGradle" class="cn.renyuzhuo.easygradle.killer.KillGradleAction" text="Kill Gradle"
-                description="Kill Gradle if a current task is running" icon="/icons/killer.png">
+        <action id="EasyGradle.KillGradle" class="cn.renyuzhuo.easygradle.killer.KillGradleAction"
+                text="Kill Gradle"
+                description="Kill Gradle if a current task is running"
+                icon="/icons/killer.png">
             <add-to-group group-id="BuildMenu" relative-to-action="Compile" anchor="after"/>
             <add-to-group group-id="ToolbarRunGroup" relative-to-action="Stop" anchor="after"/>
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
         </action>
         <action id="EasyGradle.UpdateGradle" class="cn.renyuzhuo.easygradle.updater.UpdateGradleAction"
-                text="Update Gradle" description="Load Gradle Version From Server">
+                text="Update Gradle"
+                description="Load Gradle Version From Server"
+                icon="/icons/update.png">
             <add-to-group group-id="BuildMenu" relative-to-action="Compile" anchor="after"/>
+            <add-to-group group-id="ToolbarRunGroup" relative-to-action="Stop" anchor="after"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
         </action>
     </actions>
 

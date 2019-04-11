@@ -1,5 +1,6 @@
 package cn.renyuzhuo.easygradle.updater
 
+import com.google.gson.Gson
 import com.intellij.ide.plugins.PluginManager
 import com.intellij.notification.Notification
 import com.intellij.notification.NotificationType
@@ -18,24 +19,35 @@ class UpdateGradleAction : AnAction() {
 
     override fun actionPerformed(action: AnActionEvent) {
         try {
-            var url = URL("https://services.gradle.org/versions/all")
-            var httpsURLConnection = url.openConnection() as HttpsURLConnection
+            val url = URL("https://services.gradle.org/versions/current")
+            val httpsURLConnection = url.openConnection() as HttpsURLConnection
 
             val responseCode = httpsURLConnection.responseCode
             System.out.println("\nSending 'GET' request to URL : $url")
             println("Response Code : $responseCode")
-            val bufferedReader = BufferedReader(InputStreamReader(httpsURLConnection.inputStream))
-            var inputLine: String
+
+            var inputLine: String?
             val response = StringBuffer()
-            inputLine = bufferedReader.readLine()
-            while (inputLine != null) {
-                response.append(inputLine)
+
+            if (responseCode == 200) {
+                val read = BufferedReader(InputStreamReader(httpsURLConnection.inputStream))
+                inputLine = read.readLine()
+                while (inputLine != null) {
+                    response.append(inputLine)
+                    inputLine = read.readLine()
+                }
+                println(response.toString())
+                read.close()
             }
-            bufferedReader.close()
+
+            val gradleItem = Gson().fromJson<GradleItem>(response.toString(), GradleItem::class.java)
+            println(response.toString())
+            showNotification(gradleItem.toShowString(), false)
+
         } catch (e: Exception) {
+            e.printStackTrace()
             handleUnexpectedException(e)
         }
-
     }
 
     private fun handleUnexpectedException(e: Exception) {
