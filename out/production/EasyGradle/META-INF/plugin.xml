@@ -6,11 +6,11 @@
 
     <description><![CDATA[
       Easy Gradle.<br>
-      Use gradle is so easy!
+      Use gradle is so easy!<br><br>
 
-      1. You can format build.gradle file
-      2. update gradle to new version
-      3. stop gradle with one click
+      1. You can format build.gradle file<br>
+      2. update gradle to new version<br>
+      3. stop gradle with one click<br>
     ]]></description>
 
     <change-notes><![CDATA[
