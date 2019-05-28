@@ -15,12 +15,11 @@ dependencies {
 }
 
 publishPlugin {
-    username intellijPublishUsername
-    password intellijPublishPassword
+    token intellijPublishToken
 }
 
 intellij {
-    version '2019.1.3'
+    version 'LATEST-EAP-SNAPSHOT'
     updateSinceUntilBuild true
     alternativeIdePath '/Users/renyuzhuo/Documents/JetBrains/apps/AndroidStudio/ch-0/183.5522156/Android Studio.app'
 }
@@ -46,4 +45,5 @@ patchPluginXml {
       """
 
     sinceBuild "173"
+    untilBuild "192"
 }
