@@ -20,7 +20,7 @@ publishPlugin {
 }
 
 intellij {
-    version 'LATEST-EAP-SNAPSHOT'
+    version '2017.3'
 }
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
