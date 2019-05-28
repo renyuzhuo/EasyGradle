@@ -14,10 +14,13 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
-// See https://github.com/JetBrains/gradle-intellij-plugin/
+publishPlugin {
+    username intellijPublishUsername
+    password intellijPublishPassword
+}
+
 intellij {
     version '2019.1.2'
-    sandboxDirectory = "/Users/Ren/JetBrains/apps/AndroidStudio/ch-0/183.5522156/Android Studio.app"
 }
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
