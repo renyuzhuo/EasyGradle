@@ -1,7 +1,6 @@
 <idea-plugin>
     <id>cn.renyuzhuo.plugin.easygradle</id>
     <name>Easy Gradle</name>
-    <version>1.0.1</version>
     <vendor email="renyuzhuo@foxmail.com" url="http://renyuzhuo.cn">RenYuZhuo</vendor>
 
     <description><![CDATA[
@@ -13,28 +12,7 @@
       3. stop gradle with one click<br>
     ]]></description>
 
-    <change-notes><![CDATA[
-      V1.0.1<br>
-      Add Check Gradle Version To Update<br>
-      Have Fun!<br><br>
-
-      V1.0.0<br>
-      Release The First Version: EasyGradle<br>
-      Have Fun!
-    ]]>
-    </change-notes>
-
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
-    <idea-version since-build="173.0"/>
-
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
-
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
     </extensions>
 
     <actions>
@@ -55,5 +33,4 @@
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt U"/>
         </action>
     </actions>
-
 </idea-plugin>
