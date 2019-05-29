@@ -19,7 +19,7 @@ publishPlugin {
 }
 
 intellij {
-    version 'LATEST-EAP-SNAPSHOT'
+    version '2019.1.3'
     updateSinceUntilBuild true
     alternativeIdePath '/Users/renyuzhuo/Documents/JetBrains/apps/AndroidStudio/ch-0/183.5522156/Android Studio.app'
 }
