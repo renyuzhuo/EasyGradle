@@ -15,8 +15,8 @@
     <extensions defaultExtensionNs="com.intellij">
     </extensions>
 
-    <depends>com.intellij.modules.platform</depends>
-    <depends>org.jetbrains.android</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.java</depends>
 
     <actions>
         <action id="EasyGradle.KillGradle" class="cn.renyuzhuo.easygradle.killer.KillGradleAction"
